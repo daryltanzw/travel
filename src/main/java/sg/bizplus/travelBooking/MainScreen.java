@@ -3,7 +3,6 @@ package sg.bizplus.travelBooking;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.VerticalLayout;
 
 import sg.bizplus.views.authentification.AuthentificationView;
@@ -14,12 +13,14 @@ public class MainScreen extends VerticalLayout {
     private Menu menu;
 
     public MainScreen(TravelBookingUI ui) {
-
         setSpacing(false);
+        setMargin(false);
 
         VerticalLayout viewContainer = new VerticalLayout();
+        viewContainer.setSpacing(false);
+        viewContainer.setMargin(false);
         viewContainer.setSizeFull();
-        viewContainer.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
+
 
         final Navigator navigator = new Navigator(ui, viewContainer);
         navigator.setErrorView(ErrorView.class);
@@ -28,6 +29,7 @@ public class MainScreen extends VerticalLayout {
         menu.addView(new AuthentificationView(), AuthentificationView.VIEW_NAME, AuthentificationView.VIEW_NAME, VaadinIcons.USERS);
 
         navigator.addViewChangeListener(viewChangeListener);
+        
         addComponent(menu);
         addComponent(viewContainer);
         setExpandRatio(viewContainer, 1);
