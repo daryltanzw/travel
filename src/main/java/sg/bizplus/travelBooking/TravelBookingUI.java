@@ -11,7 +11,7 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.themes.ValoTheme;
 
-import sg.bizplus.view.authentification.AuthentificationView;
+import sg.bizplus.views.authentification.AuthentificationView;
 
 @SuppressWarnings("serial")
 @Theme("travelBookingTheme")

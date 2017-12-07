@@ -6,12 +6,6 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
-/**
- * View shown when trying to navigate to a view that does not exist using
- * {@link com.vaadin.navigator.Navigator}.
- * 
- * 
- */
 @SuppressWarnings("serial")
 public class ErrorView extends VerticalLayout implements View {
 

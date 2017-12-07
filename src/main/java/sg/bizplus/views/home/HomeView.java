@@ -1,4 +1,4 @@
-package sg.bizplus.view.home;
+package sg.bizplus.views.home;
 
 import com.vaadin.navigator.View;
 import com.vaadin.ui.CssLayout;

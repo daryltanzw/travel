@@ -6,14 +6,9 @@ import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.VerticalLayout;
 
-import sg.bizplus.view.authentification.AuthentificationView;
-import sg.bizplus.view.home.HomeView;
+import sg.bizplus.views.authentification.AuthentificationView;
+import sg.bizplus.views.home.HomeView;
 
-/**
- * Content of the UI when the user is logged in.
- * 
- * 
- */
 @SuppressWarnings("serial")
 public class MainScreen extends VerticalLayout {
     private Menu menu;
@@ -39,8 +34,6 @@ public class MainScreen extends VerticalLayout {
         setSizeFull();
     }
 
-    // notify the view menu about view changes so that it can display which view
-    // is currently active
     ViewChangeListener viewChangeListener = new ViewChangeListener() {
 
         @Override

@@ -1,4 +1,4 @@
-package sg.bizplus.view.authentification;
+package sg.bizplus.views.authentification;
 
 import com.vaadin.navigator.View;
 import com.vaadin.ui.Button;
