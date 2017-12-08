@@ -14805,3 +14805,7 @@ div.v-layout.v-horizontal.v-widget {
 .travelBookingTheme .general-form-view .v-slot {
 	height: 100%;
 }
+
+.travelBookingTheme .package-grid .v-grid-tablewrapper .v-grid-row {
+	text-align: center;
+}

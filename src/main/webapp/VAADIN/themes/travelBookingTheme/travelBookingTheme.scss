@@ -53,4 +53,12 @@ $travel-background-image: "img/travel.jpg" !default;
 	        height: 100%;
 	 	}
 	}
+
+	.package-grid {
+		.v-grid-tablewrapper .v-grid-row {
+			text-align: center;
+		}
+	}
+
+
 }
