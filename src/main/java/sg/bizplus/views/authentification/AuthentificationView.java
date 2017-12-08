@@ -13,7 +13,7 @@ import com.vaadin.ui.themes.ValoTheme;
 
 @SuppressWarnings("serial")
 public class AuthentificationView extends CssLayout implements View {
-	public static String VIEW_NAME = "Login";
+	public static String VIEW_NAME = "Login/Register";
 	private TextField email;
 	private PasswordField password;
 	private Button login;
