@@ -5,6 +5,7 @@ import java.io.File;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.FileResource;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
@@ -41,8 +42,8 @@ public class PackageRow extends CssLayout {
 	private Image getPackageImage() {
 		FileResource resource = new FileResource(new File(packageDetail.getFullFilePath()));
 		Image image = new Image("", resource);
-		image.setWidth("500px");
-		image.setHeight("300px");
+		image.setWidth("330px");
+		image.setHeight("220px");
 		return image;
 	}
 
@@ -50,22 +51,32 @@ public class PackageRow extends CssLayout {
 		HorizontalLayout buttons = new HorizontalLayout();
 		buttons.setMargin(false);
 		buttons.setSpacing(true);
-		buttons.addComponents(getRegisterButton(), getFAQButton());
+		buttons.addComponents(getFAQButton(), getItinerariesButton(), getGalleryButton());
 		return buttons;
 	}
 
-	private Button getRegisterButton() {
-		Button register = new Button("Register");
-		register.addStyleName(ValoTheme.BUTTON_FRIENDLY);
-		register.addStyleName(ValoTheme.BUTTON_SMALL);
-		return register;
-	}
-	
 	private Button getFAQButton() {
-		Button faq = new Button("FAQ");
+		Button faq = new Button("Read More");
 		faq.addStyleName(ValoTheme.BUTTON_FRIENDLY);
 		faq.addStyleName(ValoTheme.BUTTON_SMALL);
 		faq.setIcon(VaadinIcons.QUESTION);
 		return faq;
 	}
+
+	private Button getItinerariesButton() {
+		Button itineraries = new Button("Itineraries");
+		itineraries.addStyleName(ValoTheme.BUTTON_FRIENDLY);
+		itineraries.addStyleName(ValoTheme.BUTTON_SMALL);
+		itineraries.setIcon(VaadinIcons.DIPLOMA_SCROLL);
+		return itineraries;
+	}
+
+	private Button getGalleryButton() {
+		Button gallery = new Button("Gallery");
+		gallery.addStyleName(ValoTheme.BUTTON_FRIENDLY);
+		gallery.addStyleName(ValoTheme.BUTTON_SMALL);
+		gallery.setIcon(VaadinIcons.PICTURE);
+		return gallery;
+	}
+
 }

@@ -12,7 +12,7 @@ public class PackageGrid extends Grid<PackageDetail> {
 		setSizeFull();
 		setSelectionMode(SelectionMode.NONE);
 		setHeaderVisible(false);
-		setRowHeight(400);
+		setRowHeight(320);
 		addComponentColumn(packageDetail -> {
 			return new PackageRow(packageDetail);
 		});
