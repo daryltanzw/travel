@@ -9,6 +9,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
 
 import sg.bizplus.backend.mock.MockPackageDS;
 import sg.bizplus.components.common.UserActionsBar;
@@ -24,10 +25,11 @@ public class HomeView extends CssLayout implements View {
 	}
 
 	private void buildUI() {
-		HorizontalLayout userActionsBar = getUserActionBar();
 		mainContentLayout.setSizeFull();
 		mainContentLayout.setSpacing(false);
 		mainContentLayout.setMargin(false);
+		
+		HorizontalLayout userActionsBar = getUserActionBar();
 
 		PackageGrid pkgGrid = new PackageGrid();
 		pkgGrid.setItems(MockPackageDS.getPackages());
@@ -43,6 +45,8 @@ public class HomeView extends CssLayout implements View {
 	private HorizontalLayout getUserActionBar() {
 		Button uploadTravelPackage = new Button("New Package");
 		uploadTravelPackage.setIcon(VaadinIcons.PLUS);
+		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_SMALL);
+		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_PRIMARY);
 		uploadTravelPackage.addClickListener(clickEvent -> {
 			//SpinOff upload Window
 		});

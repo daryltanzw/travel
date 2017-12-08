@@ -11,13 +11,13 @@ import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.themes.ValoTheme;
 
-import sg.bizplus.views.authentification.AuthentificationView;
+import sg.bizplus.views.home.HomeView;
 
 @SuppressWarnings("serial")
 @Theme("travelBookingTheme")
 public class TravelBookingUI extends UI {
 	
-	public static final String HOMESCREEN = AuthentificationView.VIEW_NAME;
+	public static final String HOMESCREEN = HomeView.VIEW_NAME;
 	
     @Override
     protected void init(VaadinRequest vaadinRequest) {

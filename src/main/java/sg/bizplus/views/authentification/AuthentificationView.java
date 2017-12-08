@@ -39,9 +39,9 @@ public class AuthentificationView extends CssLayout implements View {
 		form.setSizeUndefined();
 		
 		email = new TextField("Email");
-		email.setWidth(15, Unit.EM);
+		email.setWidth(20, Unit.EM);
 		password = new PasswordField("Password");
-		password.setWidth(15, Unit.EM);
+		password.setWidth(20, Unit.EM);
 		login = new Button("Login");
 		login.addStyleName(ValoTheme.BUTTON_FRIENDLY);
 		login.addStyleName(ValoTheme.BUTTON_LARGE);
@@ -52,7 +52,7 @@ public class AuthentificationView extends CssLayout implements View {
 		HorizontalLayout buttonContainer = new HorizontalLayout();
 		buttonContainer.addComponents(login, register);
 		buttonContainer.setMargin(false);
-		buttonContainer.setWidth(15, Unit.EM);
+		buttonContainer.setWidth(20, Unit.EM);
 
 		form.addComponents(email, password, buttonContainer);
 		return form;

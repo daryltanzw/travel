@@ -2,9 +2,11 @@ package sg.bizplus.views.home;
 
 import java.io.File;
 
+import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.FileResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
@@ -25,17 +27,31 @@ public class PackageRow extends CssLayout {
 		VerticalLayout containerLayout = new VerticalLayout();
 		containerLayout.setSpacing(true);
 		containerLayout.setMargin(false);
+
+		Image image = getPackageImage();
+
+		HorizontalLayout buttons = getButtonsContainer();
+
+		containerLayout.addComponent(image);
+		containerLayout.addComponent(buttons);
+
+		addComponent(containerLayout);
+	}
+
+	private Image getPackageImage() {
 		FileResource resource = new FileResource(new File(packageDetail.getFullFilePath()));
 		Image image = new Image("", resource);
 		image.setWidth("500px");
 		image.setHeight("300px");
-		
-		Button register = getRegisterButton();
-		
-		containerLayout.addComponent(image);
-		containerLayout.addComponent(register);
+		return image;
+	}
 
-		addComponent(containerLayout);
+	private HorizontalLayout getButtonsContainer() {
+		HorizontalLayout buttons = new HorizontalLayout();
+		buttons.setMargin(false);
+		buttons.setSpacing(true);
+		buttons.addComponents(getRegisterButton(), getFAQButton());
+		return buttons;
 	}
 
 	private Button getRegisterButton() {
@@ -43,5 +59,13 @@ public class PackageRow extends CssLayout {
 		register.addStyleName(ValoTheme.BUTTON_FRIENDLY);
 		register.addStyleName(ValoTheme.BUTTON_SMALL);
 		return register;
+	}
+	
+	private Button getFAQButton() {
+		Button faq = new Button("FAQ");
+		faq.addStyleName(ValoTheme.BUTTON_FRIENDLY);
+		faq.addStyleName(ValoTheme.BUTTON_SMALL);
+		faq.setIcon(VaadinIcons.QUESTION);
+		return faq;
 	}
 }
