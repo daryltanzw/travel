@@ -9,7 +9,6 @@ import com.vaadin.ui.HorizontalLayout;
 public class UserActionsBar extends HorizontalLayout {
 	
 	public UserActionsBar(List<Button> actionButtons) {
-		setSizeFull();
 		setSpacing(true);
 		setMargin(true);
 		actionButtons.stream().forEach(action -> addComponent(action));

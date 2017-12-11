@@ -30,32 +30,62 @@ public class HomeView extends CssLayout implements View {
 		mainContentLayout.setSpacing(false);
 		mainContentLayout.setMargin(false);
 		mainContentLayout.addStyleName("home-view");
-		
+
 		HorizontalLayout userActionsBar = getUserActionBar();
 
 		PackageGrid pkgGrid = new PackageGrid();
 		pkgGrid.setItems(MockPackageDS.getPackages());
-		
+
 		mainContentLayout.addComponent(userActionsBar);
 		mainContentLayout.addComponent(pkgGrid);
 		mainContentLayout.setExpandRatio(userActionsBar, 1);
 		mainContentLayout.setComponentAlignment(pkgGrid, Alignment.TOP_CENTER);
 		mainContentLayout.setExpandRatio(pkgGrid, 4);
-		
+
 		addComponent(mainContentLayout);
 	}
 
 	private HorizontalLayout getUserActionBar() {
+		Button uploadTravelPackage = getNewPackageButton();
+		Button editTravelPackage = getEditPackageButton();
+		Button deleteTravelPackage = getDeletePackageButton();
+		List<Button> btnList = new ArrayList<>(3);
+		btnList.add(uploadTravelPackage);
+		btnList.add(editTravelPackage);
+		btnList.add(deleteTravelPackage);
+		return new UserActionsBar(btnList);
+	}
+
+	private Button getNewPackageButton() {
 		Button uploadTravelPackage = new Button("New Package");
 		uploadTravelPackage.setIcon(VaadinIcons.PLUS);
 		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_SMALL);
 		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_PRIMARY);
 		uploadTravelPackage.addClickListener(clickEvent -> {
-			//SpinOff upload Window
+			// SpinOff upload Window
 		});
-		List<Button> btnList = new ArrayList<>(1);
-		btnList.add(uploadTravelPackage);
-		return new UserActionsBar(btnList);
+		return uploadTravelPackage;
 	}
 
+	private Button getEditPackageButton() {
+		Button btn = new Button("Edit Package");
+		btn.setIcon(VaadinIcons.EDIT);
+		btn.addStyleName(ValoTheme.BUTTON_SMALL);
+		btn.addStyleName(ValoTheme.BUTTON_PRIMARY);
+		btn.addClickListener(clickEvent -> {
+			//
+		});
+		return btn;
+	}
+	
+	private Button getDeletePackageButton() {
+		Button btn = new Button("Delete Package");
+		btn.setIcon(VaadinIcons.MINUS);
+		btn.addStyleName(ValoTheme.BUTTON_SMALL);
+		btn.addStyleName(ValoTheme.BUTTON_PRIMARY);
+		btn.addClickListener(clickEvent -> {
+			//
+		});
+		return btn;
+	}
 }
