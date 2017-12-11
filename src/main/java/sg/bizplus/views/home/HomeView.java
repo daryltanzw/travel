@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.HorizontalLayout;
@@ -28,6 +29,7 @@ public class HomeView extends CssLayout implements View {
 		mainContentLayout.setSizeFull();
 		mainContentLayout.setSpacing(false);
 		mainContentLayout.setMargin(false);
+		mainContentLayout.addStyleName("home-view");
 		
 		HorizontalLayout userActionsBar = getUserActionBar();
 
@@ -37,6 +39,7 @@ public class HomeView extends CssLayout implements View {
 		mainContentLayout.addComponent(userActionsBar);
 		mainContentLayout.addComponent(pkgGrid);
 		mainContentLayout.setExpandRatio(userActionsBar, 1);
+		mainContentLayout.setComponentAlignment(pkgGrid, Alignment.TOP_CENTER);
 		mainContentLayout.setExpandRatio(pkgGrid, 4);
 		
 		addComponent(mainContentLayout);

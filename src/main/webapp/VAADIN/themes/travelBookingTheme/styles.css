@@ -14809,3 +14809,10 @@ div.v-layout.v-horizontal.v-widget {
 .travelBookingTheme .package-grid .v-grid-tablewrapper .v-grid-row {
 	text-align: center;
 }
+
+.travelBookingTheme .home-view {
+	background-image: url(img/airplane-bg.jpg);
+	background-size: cover;
+	width: 100% !important;
+	height: 100%;
+}
