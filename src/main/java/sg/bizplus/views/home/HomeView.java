@@ -14,6 +14,7 @@ import com.vaadin.ui.themes.ValoTheme;
 
 import sg.bizplus.backend.mock.MockPackageDS;
 import sg.bizplus.components.common.UserActionsBar;
+import sg.bizplus.travelBooking.TravelBookingUI;
 
 @SuppressWarnings("serial")
 public class HomeView extends CssLayout implements View {
@@ -62,7 +63,7 @@ public class HomeView extends CssLayout implements View {
 		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_SMALL);
 		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_PRIMARY);
 		uploadTravelPackage.addClickListener(clickEvent -> {
-			// SpinOff upload Window
+			TravelBookingUI.get().addWindow(new PackageDetailsWindow(PackageDetailsWindow.Action.NEW));
 		});
 		return uploadTravelPackage;
 	}

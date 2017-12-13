@@ -10,7 +10,6 @@ public class PackageGrid extends Grid<PackageDetail> {
 	public PackageGrid() {
 		addStyleName("package-grid");
 		setSizeFull();
-		setSelectionMode(SelectionMode.NONE);
 		setHeaderVisible(false);
 		setRowHeight(320);
 		setWidth("390px");
