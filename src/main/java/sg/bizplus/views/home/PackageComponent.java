@@ -14,11 +14,11 @@ import com.vaadin.ui.themes.ValoTheme;
 import sg.bizplus.backend.mock.PackageDetail;
 
 @SuppressWarnings("serial")
-public class PackageRow extends CssLayout {
+public class PackageComponent extends CssLayout {
 	private PackageDetail packageDetail;
 	// Suppose to be Bean Item
 
-	public PackageRow(PackageDetail packageDetail) {
+	public PackageComponent(PackageDetail packageDetail) {
 		this.packageDetail = packageDetail;
 		buildUI();
 	}
@@ -41,7 +41,7 @@ public class PackageRow extends CssLayout {
 	private Image getPackageImage() {
 		FileResource resource = new FileResource(new File(packageDetail.getFullFilePath()));
 		Image image = new Image("", resource);
-		image.setWidth("330px");
+		image.setWidth("340px");
 		image.setHeight("220px");
 		return image;
 	}
@@ -50,6 +50,7 @@ public class PackageRow extends CssLayout {
 		HorizontalLayout buttons = new HorizontalLayout();
 		buttons.setMargin(false);
 		buttons.setSpacing(true);
+		buttons.setWidth("350px");
 		buttons.addComponents(getFAQButton(), getItinerariesButton(), getGalleryButton());
 		return buttons;
 	}

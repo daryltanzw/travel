@@ -14,7 +14,7 @@ public class PackageGrid extends Grid<PackageDetail> {
 		setRowHeight(320);
 		setWidth("390px");
 		addComponentColumn(packageDetail -> {
-			return new PackageRow(packageDetail);
+			return new PackageComponent(packageDetail);
 		});
 
 	}
