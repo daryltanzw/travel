@@ -10,7 +10,7 @@ public class UserActionsBar extends HorizontalLayout {
 	
 	public UserActionsBar(List<Button> actionButtons) {
 		setSpacing(true);
-		setMargin(false);
+		setMargin(true);
 		actionButtons.stream().forEach(action -> addComponent(action));
 	}
 

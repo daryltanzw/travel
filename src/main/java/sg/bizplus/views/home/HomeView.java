@@ -5,21 +5,26 @@ import java.util.List;
 
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
+import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 import sg.bizplus.backend.mock.MockPackageDS;
+import sg.bizplus.backend.mock.PackageDetail;
 import sg.bizplus.components.common.UserActionsBar;
 import sg.bizplus.travelBooking.TravelBookingUI;
 
 @SuppressWarnings("serial")
 public class HomeView extends CssLayout implements View {
 	public static String VIEW_NAME = "Home";
-	VerticalLayout mainContentLayout = new VerticalLayout();
+	Panel main;
+	FormLayout mainLayout;
+	GridLayout grid;
 
 	public HomeView() {
 		setSizeFull();
@@ -27,23 +32,33 @@ public class HomeView extends CssLayout implements View {
 	}
 
 	private void buildUI() {
-		mainContentLayout.setSizeFull();
-		mainContentLayout.setSpacing(false);
-		mainContentLayout.setMargin(false);
-		mainContentLayout.addStyleName("home-view");
+		main = new Panel();
+		main.setSizeFull();
+		
+		mainLayout = new FormLayout();
+		mainLayout.setMargin(false);
+		mainLayout.setWidth("100%");
+
+		VerticalLayout banner = new VerticalLayout();
+		banner.setMargin(false);
+		banner.setSpacing(false);
+		banner.setStyleName("home-view");
+		banner.setHeight("530px");
 
 		HorizontalLayout userActionsBar = getUserActionBar();
 
-		PackageGrid pkgGrid = new PackageGrid();
-		pkgGrid.setItems(MockPackageDS.getPackages());
+		grid = new GridLayout(3, 3);
+		grid.setSpacing(true);
+		grid.setMargin(true);
+		grid.setWidth("100%");
 
-		mainContentLayout.addComponent(userActionsBar);
-		mainContentLayout.addComponent(pkgGrid);
-		mainContentLayout.setExpandRatio(userActionsBar, 1);
-		mainContentLayout.setComponentAlignment(pkgGrid, Alignment.TOP_CENTER);
-		mainContentLayout.setExpandRatio(pkgGrid, 4);
+		List<PackageDetail> packages = MockPackageDS.getPackages();
+		packages.stream().forEach(detail -> grid.addComponent(new PackageComponent(detail)));
 
-		addComponent(mainContentLayout);
+		mainLayout.addComponents(banner, userActionsBar, grid);
+		
+		main.setContent(mainLayout);
+		addComponent(main);
 	}
 
 	private HorizontalLayout getUserActionBar() {
@@ -78,7 +93,7 @@ public class HomeView extends CssLayout implements View {
 		});
 		return btn;
 	}
-	
+
 	private Button getDeletePackageButton() {
 		Button btn = new Button("Delete Package");
 		btn.setIcon(VaadinIcons.MINUS);
@@ -89,4 +104,5 @@ public class HomeView extends CssLayout implements View {
 		});
 		return btn;
 	}
+
 }

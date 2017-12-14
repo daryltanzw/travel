@@ -14811,8 +14811,8 @@ div.v-layout.v-horizontal.v-widget {
 }
 
 .travelBookingTheme .home-view {
-	background-image: url(img/airplane-bg.jpg);
+	padding: 0px;
+	background-image: url(img/globe.jpg);
 	background-size: cover;
 	width: 100% !important;
-	height: 100%;
 }

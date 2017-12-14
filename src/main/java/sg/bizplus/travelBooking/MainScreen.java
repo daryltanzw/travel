@@ -7,7 +7,6 @@ import com.vaadin.ui.VerticalLayout;
 
 import sg.bizplus.views.authentification.AuthentificationView;
 import sg.bizplus.views.home.HomeView;
-import sg.bizplus.views.home.HomeView2;
 
 @SuppressWarnings("serial")
 public class MainScreen extends VerticalLayout {
@@ -28,7 +27,6 @@ public class MainScreen extends VerticalLayout {
         menu = new Menu(navigator);
         menu.addView(new HomeView(), HomeView.VIEW_NAME, HomeView.VIEW_NAME, VaadinIcons.HOME);
         menu.addView(new AuthentificationView(), AuthentificationView.VIEW_NAME, AuthentificationView.VIEW_NAME, VaadinIcons.USERS);
-        menu.addView(new HomeView2(), HomeView2.VIEW_NAME, HomeView2.VIEW_NAME, VaadinIcons.HOME);
         navigator.addViewChangeListener(viewChangeListener);
         
         addComponent(menu);
