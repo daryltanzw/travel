@@ -11,6 +11,14 @@ public class MockPackageDS {
 		pkgList.add(pkg1);
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
 		return pkgList;
 	}
 }
