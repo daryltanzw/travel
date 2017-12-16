@@ -4,21 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MockPackageDS {
-	public static List<PackageDetail> getPackages(){
+	public static List<PackageDetail> getPackages() {
 		List<PackageDetail> pkgList = new ArrayList<>();
-		String info = "Thailand 4D3N"; 
-		PackageDetail pkg1 = new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/HimalayasPic.jpg", info);
-		pkgList.add(pkg1);
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Mountain.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Ang Kor Wat.jpg", ""));
+		
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Mountain.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Ang Kor Wat.jpg", ""));
+		
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Mountain.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Ang Kor Wat.jpg", ""));
+		
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Mountain.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Ang Kor Wat.jpg", ""));
 		return pkgList;
 	}
 }
