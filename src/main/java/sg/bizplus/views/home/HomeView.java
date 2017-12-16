@@ -5,13 +5,14 @@ import java.util.List;
 
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.navigator.View;
+import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Panel;
-import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 import sg.bizplus.backend.mock.MockPackageDS;
@@ -34,16 +35,15 @@ public class HomeView extends CssLayout implements View {
 	private void buildUI() {
 		main = new Panel();
 		main.setSizeFull();
-		
+
 		mainLayout = new FormLayout();
-		mainLayout.setMargin(false);
+		mainLayout.setMargin(true);
 		mainLayout.setWidth("100%");
 
-		VerticalLayout banner = new VerticalLayout();
-		banner.setMargin(false);
-		banner.setSpacing(false);
-		banner.setStyleName("home-view");
-		banner.setHeight("530px");
+		ThemeResource resource = new ThemeResource("img/globe.jpg");
+		Image banner = new Image("", resource);
+		banner.setWidth("100%");
+		banner.setHeight("100%");
 
 		HorizontalLayout userActionsBar = getUserActionBar();
 
@@ -56,7 +56,7 @@ public class HomeView extends CssLayout implements View {
 		packages.stream().forEach(detail -> grid.addComponent(new PackageComponent(detail)));
 
 		mainLayout.addComponents(banner, userActionsBar, grid);
-		
+
 		main.setContent(mainLayout);
 		addComponent(main);
 	}

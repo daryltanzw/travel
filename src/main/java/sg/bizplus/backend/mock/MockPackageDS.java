@@ -9,15 +9,15 @@ public class MockPackageDS {
 		String info = "Thailand 4D3N"; 
 		PackageDetail pkg1 = new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/HimalayasPic.jpg", info);
 		pkgList.add(pkg1);
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
-		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/CostaRicaBeach.jpg", ""));
+		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Beach.jpg", ""));
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Thailand.jpg", ""));
 		return pkgList;
 	}

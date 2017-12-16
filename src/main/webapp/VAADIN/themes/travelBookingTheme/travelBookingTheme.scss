@@ -27,7 +27,6 @@ $v-layout-margin-left: $v-layout-margin-top !default;
 $v-layout-spacing-vertical: round($v-unit-size / 1.8) !default;
 $v-layout-spacing-horizontal: round($v-unit-size / 1.8) !default;
 $travel-background-image: "img/login-bg.jpg" !default;
-$home-banner-image: "img/globe.jpg" !default;
 
 @import "../valo/valo.scss";
 @mixin travelBookingTheme {
@@ -60,15 +59,5 @@ $home-banner-image: "img/globe.jpg" !default;
 			text-align: center;
 		}
 	}
-
-	.home-view {
-		padding: 0px;
-		@if $home-banner-image {
-      		background-image: url(#{$home-banner-image});
-     		background-size: cover;
-     		width: 100% !important;
-    	} 
-	}
-
 
 }
