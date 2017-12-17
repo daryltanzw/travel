@@ -14809,3 +14809,13 @@ div.v-layout.v-horizontal.v-widget {
 .travelBookingTheme .package-grid .v-grid-tablewrapper .v-grid-row {
 	text-align: center;
 }
+
+.travelBookingTheme .package-component-title {
+	white-space: nowrap;
+	font-size: 1.2em;
+	font-family: monospace;
+	background-color: burlywood;
+	color: white;
+	text-decoration: underline;
+	text-align: left;
+}

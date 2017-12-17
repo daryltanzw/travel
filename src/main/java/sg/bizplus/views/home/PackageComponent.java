@@ -2,11 +2,9 @@ package sg.bizplus.views.home;
 
 import java.io.File;
 
-import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.FileResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CssLayout;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
@@ -16,6 +14,8 @@ import sg.bizplus.backend.mock.PackageDetail;
 @SuppressWarnings("serial")
 public class PackageComponent extends CssLayout {
 	private PackageDetail packageDetail;
+	private final String WIDTH = "340px";
+	private final String HEIGHT = "220px";
 	// Suppose to be Bean Item
 
 	public PackageComponent(PackageDetail packageDetail) {
@@ -25,15 +25,14 @@ public class PackageComponent extends CssLayout {
 
 	private void buildUI() {
 		VerticalLayout containerLayout = new VerticalLayout();
-		containerLayout.setSpacing(true);
+		containerLayout.setSpacing(false);
 		containerLayout.setMargin(false);
 
 		Image image = getPackageImage();
-
-		HorizontalLayout buttons = getButtonsContainer();
+		VerticalLayout description = getDescriptionLayout();
 
 		containerLayout.addComponent(image);
-		containerLayout.addComponent(buttons);
+		containerLayout.addComponent(description);
 
 		addComponent(containerLayout);
 	}
@@ -41,42 +40,23 @@ public class PackageComponent extends CssLayout {
 	private Image getPackageImage() {
 		FileResource resource = new FileResource(new File(packageDetail.getFullFilePath()));
 		Image image = new Image("", resource);
-		image.setWidth("340px");
-		image.setHeight("220px");
+		image.setWidth(WIDTH);
+		image.setHeight(HEIGHT);
 		return image;
 	}
 
-	private HorizontalLayout getButtonsContainer() {
-		HorizontalLayout buttons = new HorizontalLayout();
-		buttons.setMargin(false);
-		buttons.setSpacing(true);
-		buttons.setWidth("350px");
-		buttons.addComponents(getFAQButton(), getItinerariesButton(), getGalleryButton());
-		return buttons;
-	}
+	private VerticalLayout getDescriptionLayout() {
+		VerticalLayout desc = new VerticalLayout();
+		desc.setWidth(WIDTH);
+		desc.setSpacing(false);
+		desc.setMargin(false);
+		Button titleBtn = new Button(packageDetail.getTitle());
+		titleBtn.addStyleName(ValoTheme.BUTTON_LINK);
+		titleBtn.addStyleName("package-component-title");
+		titleBtn.setWidth(WIDTH);
+		desc.addComponents(titleBtn);
 
-	private Button getFAQButton() {
-		Button faq = new Button("Read More");
-		faq.addStyleName(ValoTheme.BUTTON_FRIENDLY);
-		faq.addStyleName(ValoTheme.BUTTON_SMALL);
-		faq.setIcon(VaadinIcons.QUESTION);
-		return faq;
-	}
-
-	private Button getItinerariesButton() {
-		Button itineraries = new Button("Itineraries");
-		itineraries.addStyleName(ValoTheme.BUTTON_FRIENDLY);
-		itineraries.addStyleName(ValoTheme.BUTTON_SMALL);
-		itineraries.setIcon(VaadinIcons.DIPLOMA_SCROLL);
-		return itineraries;
-	}
-
-	private Button getGalleryButton() {
-		Button gallery = new Button("Gallery");
-		gallery.addStyleName(ValoTheme.BUTTON_FRIENDLY);
-		gallery.addStyleName(ValoTheme.BUTTON_SMALL);
-		gallery.setIcon(VaadinIcons.PICTURE);
-		return gallery;
+		return desc;
 	}
 
 }

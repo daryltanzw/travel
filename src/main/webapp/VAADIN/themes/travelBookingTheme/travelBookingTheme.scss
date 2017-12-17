@@ -60,4 +60,14 @@ $travel-background-image: "img/login-bg.jpg" !default;
 		}
 	}
 
+	.package-component-title {
+		    white-space: nowrap;
+    		font-size: 1.2em;
+    		font-family: monospace;
+    		background-color: burlywood;
+    		color: white;
+    		text-decoration: underline;
+    		text-align: left;
+	}
+
 }
