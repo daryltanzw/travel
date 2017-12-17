@@ -6,6 +6,7 @@ public class PackageDetail {
 	private String title = "";
 	private String info ="";
 	
+	public PackageDetail() {}
 	public PackageDetail(String fullFilePath, String title, String info) {
 		this.setTitle(title);
 		this.setFullFilePath(fullFilePath);

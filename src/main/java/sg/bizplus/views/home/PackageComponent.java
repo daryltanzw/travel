@@ -10,6 +10,7 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 import sg.bizplus.backend.mock.PackageDetail;
+import sg.bizplus.travelBooking.TravelBookingUI;
 
 @SuppressWarnings("serial")
 public class PackageComponent extends CssLayout {
@@ -50,10 +51,15 @@ public class PackageComponent extends CssLayout {
 		desc.setWidth(WIDTH);
 		desc.setSpacing(false);
 		desc.setMargin(false);
+		
 		Button titleBtn = new Button(packageDetail.getTitle());
 		titleBtn.addStyleName(ValoTheme.BUTTON_LINK);
 		titleBtn.addStyleName("package-component-title");
 		titleBtn.setWidth(WIDTH);
+		titleBtn.addClickListener(clickEvent -> {
+			TravelBookingUI.get().addWindow(new PackageDetailsWindow(packageDetail));
+		});
+		
 		desc.addComponents(titleBtn);
 
 		return desc;

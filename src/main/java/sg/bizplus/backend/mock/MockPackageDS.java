@@ -23,4 +23,8 @@ public class MockPackageDS {
 		pkgList.add(new PackageDetail("C:/Dev/git/travelBooking/dynamicImages/Ang Kor Wat.jpg", "Laos", ""));
 		return pkgList;
 	}
+	
+	public static PackageDetail getNewPackageDetail() {
+		return new PackageDetail("", "", "");
+	}
 }

@@ -78,7 +78,7 @@ public class HomeView extends CssLayout implements View {
 		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_SMALL);
 		uploadTravelPackage.addStyleName(ValoTheme.BUTTON_PRIMARY);
 		uploadTravelPackage.addClickListener(clickEvent -> {
-			TravelBookingUI.get().addWindow(new PackageDetailsWindow(PackageDetailsWindow.Action.NEW));
+			TravelBookingUI.get().addWindow(new PackageDetailsWindow(MockPackageDS.getNewPackageDetail()));
 		});
 		return uploadTravelPackage;
 	}
